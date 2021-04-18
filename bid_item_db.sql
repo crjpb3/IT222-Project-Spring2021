@@ -33,3 +33,9 @@ ItemID INT NOT NULL,
 CONSTRAINT PK_BIDID PRIMARY KEY(BidID),
 CONSTRAINT FK_ITEMID FOREIGN KEY(ItemID) REFERENCES Items(ItemID)
 );
+
+INSERT INTO Departments VALUES
+('ELEC', 'Electronics'),
+('CLTH', 'Clothing'),
+('APPL', 'Appliances'),
+('JWL', 'Jewelry');
