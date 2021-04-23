@@ -14,11 +14,11 @@ if(isset($_POST['submit']))
 	
 	if(mysqli_query($connection, $query))
 	{
-		echo "<br>"; echo "Your bid was successful!";
+		$message = "<br>Your bid was successfully submitted!";
 	}
 	else
 	{
-		echo "<br>"; echo "Error: " . mysqli_error($connection);
+		$message = "<br>Error: " . mysqli_error($connection);
 	}
 }
 
