@@ -4,6 +4,11 @@ require_once 'connection.php';
 
 $connection = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
 
+if(!$connection)
+{
+	die("Unable to connect to MySQL: " . mysqli_connect_errno());
+}
+
 if(isset($_POST['submit']))
 {
 	$first_name = $_POST['fname'];
