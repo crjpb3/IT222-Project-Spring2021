@@ -12,6 +12,7 @@
 	$first_name = $last_name = $email = $query = $message = '';
 	$bid_amount = 1.00;
 	$id = $_GET['id'];
+	$status = $_GET['status'];
 
 	if(isset($_POST['submit']))
 	{
@@ -25,6 +26,10 @@
 		if(mysqli_query($connection, $query))
 		{
 			$message = "<br>Your bid was successfully submitted!";
+		}
+		else if($status == 'SOLD')
+		{
+			$message = "<br>This item has already been sold!";
 		}
 		else
 		{

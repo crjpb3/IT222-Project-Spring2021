@@ -13,7 +13,8 @@
 	$id = $_GET['id'];
 	
 	//Query for max bidder email
-	$query = "SELECT BidderF_Name, BidderEmail FROM Bids WHERE BidAmount = (SELECT MAX(BidAmount) FROM Bids WHERE ItemID = $id)";
+	$query = "SELECT BidderF_Name, BidderEmail FROM Bids WHERE 
+				BidAmount = (SELECT MAX(BidAmount) FROM Bids WHERE ItemID = $id)";
 	$result = mysqli_query($connection, $query);
 	
 	if(!$result)
@@ -37,11 +38,14 @@
 	$row = mysqli_fetch_assoc($result);
 	$item_name = $row['ItemName'];
 	
+	$query = "UPDATE Items SET ItemStatus = 'SOLD' WHERE ItemID = $id";
+	mysqli_query($connection, $query);
+	
+	mysqli_close($connection);
+	
 	$subject = $item_name . " Bid Result";
 	$message = "Congratulations " . $first_name . "! You won the bid for the " . $item_name . "!";
 	
 	mail($to, $subject, $message);
-	
-	mysqli_close($connection);
 
 ?>
