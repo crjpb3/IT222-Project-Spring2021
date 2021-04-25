@@ -8,9 +8,11 @@
 		die("Unable to connect to MySQL: " . mysqli_connect_errno());
 	}
 	
-	$item1 = $item2 = $item3 = $query = $html = '';
+	$item1 = $item2 = $item3 = '';
+	$query = $html = '';
+	$dept = $_GET['dept'];
 	
-	$query = "SELECT ItemName FROM Items WHERE DeptCode = 'APPL'";
+	$query = "SELECT ItemID, ItemName FROM Items WHERE DeptCode = '$dept'";
 	
 	$result = mysqli_query($connection, $query);
 	
@@ -26,5 +28,5 @@
 	$row = mysqli_fetch_assoc($result);
 	$item3 = $row['ItemName'];
 	
-	mysql_close($connection);
+	mysqli_close($connection);
 ?>

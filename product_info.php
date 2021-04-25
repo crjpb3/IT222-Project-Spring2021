@@ -1,7 +1,6 @@
 <?php
 	
 	require_once 'connection.php';
-	include 'electronics_listings.php';
 	
 	$connection = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
 	
@@ -11,9 +10,11 @@
 	}
 	
 	$query = $name = $description = '';
+	$price = 1.00;
+	$id = $_GET['id'];
 	
 	//Querying for item name and description
-	$query = "SELECT ItemName, ItemDescr FROM Items WHERE ItemName = " . $item1;
+	$query = "SELECT ItemName, ItemDescr FROM Items WHERE ItemID = $id";
 	
 	$result = mysqli_query($connection, $query);
 	
@@ -27,7 +28,7 @@
 	$description = $row['ItemDescr'];
 	
 	//Querying for the current highest bid
-	$query = "SELECT MAX(BidAmount) FROM Bids WHERE ItemID = 1";
+	$query = "SELECT MAX(BidAmount) FROM Bids WHERE ItemID = $id";
 	
 	$result = mysqli_query($connection, $query);
 	
@@ -39,5 +40,5 @@
 	$row = mysqli_fetch_assoc($result);
 	$price = $row['BidAmount'];
 	
-	mysql_close($connection);
+	mysqli_close($connection);
 ?>
