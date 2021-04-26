@@ -2,6 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<?php include 'bid_list.php'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -9,7 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="ProjectStyleSheet.css" />
 
-    <title>About Us</title>
+    <title>Bid Cart</title>
 </head>
 <body>
     
@@ -22,15 +23,14 @@
         </div>
         <h3 style="margin-left: 20px;">Your Products:</h3>
 
-        <form>
+        <form method="post">
             Please enter your email:     <input type="text" name="email" />
             <input type="submit" name="submit" value="Submit" style="width: 10%;color: black;" />
         </form>
         
         <table class="stable">
 
-        <?php
-        ?>
+        <?php echo $html; ?>
 
         </table>
     </div>

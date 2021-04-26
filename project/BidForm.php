@@ -33,7 +33,7 @@
                         <br /><br />
                         <span style="color:red;">*</span>Email:     <input style="color: black;" type="text" name="email"  />
                         <br /><br />
-                        <span style="color:red;">*</span>Bid(minimum $<?php if ($price > 1.00){echo number_format(($price * 1.10), 2);}else {echo $price; $price *= 1.10;} ?>):       <input style="color: black;" type="number" name="bid" step="0.01" min="<?php if($price > 1.00){echo number_format($price * 1.10, 2);}else {echo $price; $price *= 1.10;} ?>"  />
+                        <span style="color:red;">*</span>Bid(minimum $<?php echo number_format(($price * 1.10), 2); ?>):       <input style="color: black;" type="number" name="bid" step="0.01" min="<?php echo number_format($price * 1.10, 2); ?>"  />
                         <br /><br />
 						<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
                         <input type="submit" name="submit" value="Submit" style="width: 20%;color: black;" />
@@ -43,7 +43,7 @@
         </table>
     </div>
 		<?php unset($first_name, $last_name, $email, $message); ?>
-        <?php include 'Footer.php';?>
+        <?php include 'Footer.php'; ?>
 
 </body>
 </html>
