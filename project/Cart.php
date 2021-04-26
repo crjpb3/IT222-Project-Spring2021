@@ -20,10 +20,19 @@
         <div class="titleDiv">
             <h2>Shopping Cart</h2>
         </div>
-        <h3>Your Products:</h3>
-        <p>
-            ...
-        </p>
+        <h3 style="margin-left: 20px;">Your Products:</h3>
+
+        <form>
+            Please enter your email:     <input type="text" name="email" />
+            <input type="submit" name="submit" value="Submit" style="width: 10%;color: black;" />
+        </form>
+        
+        <table class="stable">
+
+        <?php
+        ?>
+
+        </table>
     </div>
 
     <?php include 'Footer.php';?>
