@@ -150,6 +150,14 @@ label {
     text-align: left;
 }
 
+.stable {
+    margin-top: 30px;
+    font-size: 20px;
+}
+.stable td {
+    padding: 10px;
+}
+
 .bid {
     background-color: darkslategray;
     color: white;
