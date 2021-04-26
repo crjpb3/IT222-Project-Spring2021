@@ -22,14 +22,14 @@
 
 
     <div class="productDiv">
-        <a href="Electronics.php"><p class="back"><symbol>&#60</symbol>BACK</p></a>
+        <a href="Electronics.php?dept=ELEC"><p class="back"><symbol>&#60</symbol>BACK</p></a>
 
         <h3><?php echo $item_name; ?></h3>
         <table class="ptable">
             <tr>
                 <td><img src="images/smartwatch.jpg" class="bigProduct" /></td>
                 <td class="bid">
-                    <h4>Current Highest Bid: <?php echo $price ?></h4>
+                    <h4>Current Highest Bid: $<?php echo $price; ?></h4>
                     <h5>Highest Bidder: <?php echo $bidder_name; ?></h5>
                     <br /><br />
                     <h4 id="text">Would you like to bid on this item?</h4>
@@ -44,7 +44,7 @@
 
         <div style="width:45%">
             <h4 class="text">Description:</h4>
-            <p class="text"><?php echo $description ?></p>
+            <p class="text"><?php echo $description; ?></p>
         </div>
 
     </div>

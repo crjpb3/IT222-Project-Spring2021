@@ -24,12 +24,12 @@
         <hr />
         <table class="htable" style="font-size:25px; ">
             <tr>
-                <td><a href="Electronics.php">ELECTRONICS</a></td>
-                <td><a href="Appliances.php">APPLIANCES</a></td>
+                <td><a href="Electronics.php?dept=ELEC">ELECTRONICS</a></td>
+                <td><a href="Appliances.php?dept=APPL">APPLIANCES</a></td>
             </tr>
             <tr>
-                <td><a href="Clothing.php">CLOTHING</a></td>
-                <td><a href="Jewelry.php">JEWELRY</a></td>
+                <td><a href="Clothing.php?dept=CLTH">CLOTHING</a></td>
+                <td><a href="Jewelry.php?dept=JWL">JEWELRY</a></td>
             </tr>
         </table>
         <hr />

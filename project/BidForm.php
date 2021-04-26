@@ -2,6 +2,8 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<?php include 'bid_submit.php'; ?>
+	<?php include 'product_info.php'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -23,22 +25,24 @@
                     <h5>Enter your infomation in the following form to bid.</h5>
                     <br /><br />
                     <h4>Customer Information:</h4>
-                    <form method="post" action="...">
-                        First Name:<input type="text" name="fname" />
+                    <form method="post">
+						<?php echo $message ?></span><br><br>
+                        <span style="color:red;">*</span>First Name:<input style="color: black;" type="text" name="fname" />
                         <br /><br />
-                        Last Name: <input type="text" name="lname"  />
+                        <span style="color:red;">*</span>Last Name: <input style="color: black;" type="text" name="lname"  />
                         <br /><br />
-                        Email:     <input type="text" name="email"  />
+                        <span style="color:red;">*</span>Email:     <input style="color: black;" type="text" name="email"  />
                         <br /><br />
-                        Bid:       <input type="text" name="bid"  />
+                        <span style="color:red;">*</span>Bid(minimum $<?php if ($price > 1.00){echo number_format(($price * 1.10), 2);}else {echo $price; $price *= 1.10;} ?>):       <input style="color: black;" type="number" name="bid" step="0.01" min="<?php if($price > 1.00){echo number_format($price * 1.10, 2);}else {echo $price; $price *= 1.10;} ?>"  />
                         <br /><br />
+						<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"/>
                         <input type="submit" name="submit" value="Submit" style="width: 20%;color: black;" />
                     </form>
                 </td>
             </tr>
         </table>
     </div>
-
+		<?php unset($first_name, $last_name, $email, $message); ?>
         <?php include 'Footer.php';?>
 
 </body>

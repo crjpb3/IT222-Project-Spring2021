@@ -28,7 +28,9 @@
 	$description = $row['ItemDescr'];
 	
 	if($status == 'SOLD')
-		$item_name = $description = $status;
+	{
+		$item_name = $description = '<span style="color:red;">SOLD</span>'; 
+	}
 	
 	//Querying for the current highest bid and bid user
 	$query = "SELECT BidderF_Name, BidderL_Name, BidAmount FROM Bids WHERE 
@@ -43,6 +45,10 @@
 	
 	$row = mysqli_fetch_assoc($result);
 	$bidder_name = $row['BidderF_Name'] . " " . $row['BidderL_Name'];
+	
+	if($bidder_name == " ")
+		$bidder_name = "It could be you! Bid now!";
+
 	$price = $row['BidAmount'];
 	if(empty(trim($price)))
 		$price = 1.00;

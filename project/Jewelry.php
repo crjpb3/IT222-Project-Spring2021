@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="descDiv">
-                        <p><?php echo item3; ?></p>
+                        <p><?php echo $item3; ?></p>
                     </div>
                 </td>
             </tr>
