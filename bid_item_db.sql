@@ -40,7 +40,7 @@ INSERT INTO Departments VALUES
 ('APPL', 'Appliances'),
 ('JWL', 'Jewelry');
 
-INSERT INTO Items VALUES
+INSERT INTO Items(ItemID, ItemName, ItemDescr, DeptCode) VALUES
 (1, 'Smart Watch', 'LG Series 2 Black Smart Watch', 'ELEC'),
 (2, 'Camera', 'Nikon 3200 4K HDR Red Camera', 'ELEC'),
 (3, 'Headphones', 'Sony Inline Mic Pink Headphones', 'ELEC'),
