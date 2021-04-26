@@ -12,7 +12,7 @@
 	$first_name = $last_name = $email = $query = $message = '';
 	$bid_amount = 1.00;
 	$id = $_GET['id'];
-	$status = $_GET['status'];
+	$status = $_GET['status'];//need to change. won't get from $_GET; need to get from database
 
 	if(isset($_POST['submit']))
 	{

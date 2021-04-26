@@ -9,7 +9,7 @@
 		die("Unable to connect to MySQL: " . mysqli_connect_errno());
 	}
 	
-	$query = $name = $description = $status = '';
+	$query = $bidder_name = $item_name = $description = $status = '';
 	$price = 1.00;
 	$id = $_GET['id'];
 	
@@ -24,14 +24,15 @@
 	}
 	
 	$row = mysqli_fetch_assoc($result);
-	$name = $row['ItemName'];
+	$item_name = $row['ItemName'];
 	$description = $row['ItemDescr'];
 	
 	if($status == 'SOLD')
-		$name = $description = $status;
+		$item_name = $description = $status;
 	
-	//Querying for the current highest bid
-	$query = "SELECT MAX(BidAmount) FROM Bids WHERE ItemID = $id";
+	//Querying for the current highest bid and bid user
+	$query = "SELECT BidderF_Name, BidderL_Name, BidAmount FROM Bids WHERE 
+				BidAmount = (SELECT MAX(BidAmount) FROM Bids WHERE ItemID = $id)";
 	
 	$result = mysqli_query($connection, $query);
 	
@@ -41,6 +42,7 @@
 	}
 	
 	$row = mysqli_fetch_assoc($result);
+	$bidder_name = $row['BidderF_Name'] . " " . $row['BidderL_Name'];
 	$price = $row['BidAmount'];
 	if(empty(trim($price)))
 		$price = 1.00;

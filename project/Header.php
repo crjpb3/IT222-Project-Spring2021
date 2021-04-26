@@ -23,10 +23,10 @@
                 <li class="dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">DEPARTMENTS <symbol>&#11167</symbol></a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-men" href="Electronics.php">ELECTRONICS</a></li>
-                        <li><a class="dropdown-men" href="Appliances.php">APPLIANCES</a></li>
-                        <li><a class="dropdown-men" href="Jewelry.php">JEWELRY</a></li>
-                        <li><a class="dropdown-men" href="Clothing.php">CLOTHING</a></li>
+                        <li><a class="dropdown-men" href="Electronics.php?dept=ELEC">ELECTRONICS</a></li>
+                        <li><a class="dropdown-men" href="Appliances.php?dept=APPL">APPLIANCES</a></li>
+                        <li><a class="dropdown-men" href="Jewelry.php?dept=JWL">JEWELRY</a></li>
+                        <li><a class="dropdown-men" href="Clothing.php?dept=CLTH">CLOTHING</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="AboutUs.php">ABOUT US</a></li>
