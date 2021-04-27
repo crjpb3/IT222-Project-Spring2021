@@ -26,8 +26,7 @@
             <tr>
                 <td><img src="images/cowboyhat.jpg" class="bigProduct" /></td>
                 <td class="bid">
-                    <h4>Current Highest Bid: $<?php echo $price; ?></h4>
-                    <h5>Highest Bidder: <?php echo $bidder_name; ?></h5>
+                    <h4>Starting Bid: <b style="font-size: 25px">$1</b></h4>
                     <br /><br />
                     <h4 id="text">Would you like to bid on this item?</h4>
                     <br />
