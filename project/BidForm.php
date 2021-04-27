@@ -42,7 +42,7 @@
             </tr>
         </table>
     </div>
-		<?php unset($first_name, $last_name, $email, $message); ?>
+		<?php unset($first_name, $last_name, $email, $message, $bid_amount); ?>
         <?php include 'Footer.php'; ?>
 
 </body>
