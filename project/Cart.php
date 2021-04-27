@@ -21,18 +21,21 @@
         <div class="titleDiv">
             <h2>Shopping Cart</h2>
         </div>
-        <h3 style="margin-left: 20px;">Your Products:</h3>
+        <h3 style="margin-left: 10px;">Your Bids:</h3>
 
         <form method="post">
             Please enter your email:     <input type="text" name="email" />
             <input type="submit" name="submit" value="Submit" style="width: 10%;color: black;" />
         </form>
         
-        <table class="stable">
+        <div style="height: 550px; overflow: scroll; margin-top: 20px;">
+        <table class="table table-striped">
 
         <?php echo $html; ?>
 
         </table>
+        </div>
+
     </div>
 
     <?php include 'Footer.php';?>

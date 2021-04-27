@@ -22,10 +22,10 @@
 			die("Database access failed: " . mysqli_error($connection));
 		}
 	
-		$html .= "<th>Item</th><th>Description</th><th>Bid</th>";
+		$html .= "<th>Item</th><th>Bid</th>";
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$html .= "<tr><td>" . $row['ItemName'] . "</td><td>" . $row['BidAmount'] . "</td></tr>";
+			$html .= "<tr><td>" . $row['ItemName'] . "</td><td> $" . $row['BidAmount'] . "</td></tr>";
 		}
 	}
 	
