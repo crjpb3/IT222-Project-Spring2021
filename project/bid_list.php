@@ -14,7 +14,7 @@
 	{
 		$email = $_POST['email'];
 	
-		$query = 'SELECT Items.ItemName, Bids.BidAmount FROM Items INNER JOIN Bids ON Items.ItemID = Bids.ItemID ORDER BY Items.ItemName';
+		$query = 'SELECT Items.ItemName, Bids.BidAmount FROM Items INNER JOIN Bids ON Items.ItemID = Bids.ItemID ORDER BY Items.ItemName, Bids.BidAmount DESC';
 		$result = mysqli_query($connection, $query);
 	
 		if(!$result)
