@@ -12,6 +12,7 @@
 	$query = $item_name = $first_name = $to = $subject = $message = '';
 	$id = $_GET['id'];
 	
+	//Update item status
 	$query = "UPDATE Items SET ItemStatus = 'SOLD' WHERE ItemID = $id";
 	mysqli_query($connection, $query);
 	
@@ -43,9 +44,9 @@
 	
 	mysqli_close($connection);
 	
-	$subject = $item_name . " Bid Result";
+	$subject = $item_name . "Bid Result";
 	$message = "Congratulations " . $first_name . "! You won the bid for the " . $item_name . "!";
 	
-	//mail($to, $subject, $message); //Need a mail server for this to work
+	mail($to, $subject, $message); //Need a mail server for this to work
 
 ?>
